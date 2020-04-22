@@ -20,7 +20,6 @@ public class DatabaseConnection {
      * @return Connection. Returns the connection it is made.
      * @throws SQLException when there is no connection
      */
-    public static Connection getConnection() throws SQLException {
         Connection conn;
         conn = DriverManager.getConnection(url, user, password);
         return conn;
