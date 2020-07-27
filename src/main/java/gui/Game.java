@@ -4,11 +4,11 @@ import game.AsteroidFactory;
 import game.GameObject;
 import game.Rocket;
 import game.TimeHandler;
-
 import gui.controllers.Homepage;
 import gui.controllers.Main;
 
-import java.awt.BorderLayout;
+import javax.swing.*;
+import java.awt.*;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
@@ -17,14 +17,12 @@ import java.util.List;
 import java.util.Random;
 import java.util.concurrent.CopyOnWriteArrayList;
 
-import javax.swing.JFrame;
-
 /**
  * The main game class to run the application.
  */
 @SuppressWarnings({"PMD.MissingSerialVersionUID", "PMD.BeanMembersShouldSerialize",
-        "PMD.DataflowAnomalyAnalysis","Duplicates"})
-public class    Game extends JFrame implements KeyListener {
+        "PMD.DataflowAnomalyAnalysis", "Duplicates"})
+public class Game extends JFrame implements KeyListener {
 
     /**
      * The GameScene instance.
@@ -151,6 +149,7 @@ public class    Game extends JFrame implements KeyListener {
 
     /**
      * Main method to run the application.
+     *
      * @param args run application
      */
     public static void main(String[] args) {

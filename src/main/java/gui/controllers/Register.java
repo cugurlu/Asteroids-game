@@ -1,13 +1,6 @@
 package gui.controllers;
 
 import database.JdbcDao;
-
-import java.io.File;
-import java.io.IOException;
-import java.net.URL;
-import java.sql.SQLException;
-import java.util.ResourceBundle;
-
 import javafx.animation.Timeline;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -20,6 +13,12 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
+
+import java.io.File;
+import java.io.IOException;
+import java.net.URL;
+import java.sql.SQLException;
+import java.util.ResourceBundle;
 
 @SuppressWarnings({"PMD.BeanMembersShouldSerialize",
         "PMD.DataflowAnomalyAnalysis"})
@@ -64,7 +63,8 @@ public class Register extends Controller implements Initializable {
 
     /**
      * Initializes the register page.
-     * @param location url for the file to be loaded.
+     *
+     * @param location  url for the file to be loaded.
      * @param resources required field for initialization.
      */
     @Override
@@ -105,8 +105,9 @@ public class Register extends Controller implements Initializable {
     /**
      * Registering a new user with the given username.
      * and password, if password and username are valid.
+     *
      * @param e the click of the mouse.
-     * @throws IOException input exception.
+     * @throws IOException  input exception.
      * @throws SQLException exception caused by database error.
      */
     @FXML
@@ -117,18 +118,17 @@ public class Register extends Controller implements Initializable {
             String password = pass.getText();
 
             JdbcDao jdbcDao = new JdbcDao();
-            jdbcDao.insertUser(username,password);
+            jdbcDao.insertUser(username, password);
 
             warning.setOpacity(0.0);
             warning3.setOpacity(0.0);
             warning2.setOpacity(0.0);
-
-
         }
     }
 
     /**
      * checks if the string inputted as a password actually contains a number char.
+     *
      * @return whether it contains a number.
      */
     private Boolean containsNum() {
@@ -144,6 +144,7 @@ public class Register extends Controller implements Initializable {
 
     /**
      * checks is the inputted string is a valid password according to our requirements.
+     *
      * @return true if the input is valid.
      */
     private Boolean validPassword() {
@@ -199,6 +200,7 @@ public class Register extends Controller implements Initializable {
 
     /**
      * checking if the username is valid according to our requirements.
+     *
      * @return true if the user is valid.
      */
     private Boolean validUsername() {
